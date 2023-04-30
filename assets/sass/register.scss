@@ -1,0 +1,104 @@
+
+// ----------------------global-------------
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: #242424;
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
+
+// ------------------header-----------------------
+.header {
+    background-color: #242424;
+    padding: 15px 0;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        .logo{
+            img{
+
+            }
+        }
+        .sign-in{           
+            a{
+               padding: 0 5px;
+               text-decoration: none;
+               color:#fff;
+            }
+        }
+    }   
+}
+// ---------------------form-register----------------
+.form-register{
+    .container{
+        width: 50%;
+        .card{
+           
+            .card-header{
+                h1{
+                    text-align: center;
+                      background-color: #fff;  
+                }
+            }
+            .card-body{
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                input{
+                    padding: 10px;
+                    margin: 10px;
+                    background-color: #fff;
+                    border-radius: 5px;
+                }
+                .gender{
+                    background-color: #fff;
+                        input{
+
+                        }
+                        label{
+                            background-color: #fff;                           
+                        }
+                }
+            }
+            .card-footer{
+                    button{
+                        padding: 5px;
+                        border-radius: 5px;
+                        width: 40%;
+                        margin: 0 auto;
+                        display: block;
+                        color: #fff;
+                        background-color:#242424;
+                    }
+            }
+        }
+    }
+}
+
+// ------------------footer-------------------------
+
+.footer{
+    padding-top: 30px;
+    .container{
+        .row{
+            color:#fff ;
+            h1{
+
+            }
+            p{
+
+            }
+            h2{
+                color: red;
+            }
+        }
+    }
+}

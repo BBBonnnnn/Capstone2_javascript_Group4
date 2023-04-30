@@ -1,0 +1,213 @@
+// --------color-----------------
+$text-light:#fff;
+$text-dark:#242424;
+$c1-text-dark:#afa7a7;
+$text-hope:#1877f2;
+$text-dangerous:#fa3e3e;
+
+
+// ----------font-size----------------
+$fs-base:16px;
+$fs-xl:18px;
+$fs-2xl:20px;
+$fs-3xl:30px;
+$fs-4xl:40px;
+$fs-5xl:50px;
+$fs-6xl:60px;
+$fs-7xl:70px;
+$fs-8xl:80px;
+$fs-9xl:90px;
+// ------------------font-weight-------------
+$fw-line:300;
+$fw-normal:400;
+$fw-semiBold:500;
+$fw-bold:700;
+
+// -----------------background--------------
+$bg-light:#fff;
+$bg-dark:#242424;
+$bg-hope:#1877f2;
+$bg-dangerous:#fa3e3e;
+
+// ------------------mixin---------------------------
+@mixin text($fs,$fw,$c){
+    font-size: $fs ;
+    font-weight: $fw;
+    color: $c;
+}
+
+// ----------------Css utility------------------
+
+// ------------------function--------------------
+
+
+
+// -----------------loop-----------------------
+
+
+
+
+
+
+// ----------------------global-------------
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
+
+// ------------------header-----------------------
+.header {
+    background-color: #242424;
+    padding: 15px 0;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        .logo{
+            img{
+
+            }
+        }
+        .sign-in{           
+            a{
+               padding: 0 5px;
+               text-decoration: none;
+               color:#fff;
+            }
+        }
+    }
+}
+
+// ----------------option--------------------
+
+.option{
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        .logo2{
+            img{
+                width: 50px;
+            }
+        }
+        .menu{
+            a{
+                text-decoration: none;
+                color:#242424;
+                padding: 0 20px;
+                position: relative;
+                &::after{
+                    position: absolute;
+                    bottom:0;
+                    left: 0;
+                    content: "";
+                    width: 100%;
+                    transform:scaleX(0);
+                    height: 3px;
+                    background-color:#242424;
+                    transition: all 0.3s;
+                }
+                &:hover{
+                    &::after{
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+        .search{
+            input{
+                // background: #242424;
+                // border:none;
+                // border-radius: 10px;
+            }
+        }
+        
+    }
+}
+
+// -----------------carousel----------------------------------
+ .carousel{
+    background-color: #242424;
+    .slide{
+        .carousel-indicators{
+
+        }
+        .carousel-inner{
+            .active{
+                
+            }
+            .carousel-item{
+                img{
+                    margin: 0 auto;
+                    }
+            }
+        }
+    }
+ }
+
+//  -------------------product-feature-----------------------
+.product-feature{
+    background-color: #242424;
+    padding-bottom:50px ;
+    h1{
+        text-align: center;
+        @include text($fs-4xl,$fw-bold,$text-light);
+    }
+    .container{
+        .row{
+
+            .col-3{
+                .card{                   
+                    height: 600px;
+                    margin: 20px 10px;
+                    &:hover{
+                        box-shadow: 14px 21px 82px 10px rgba(0,0,0,0.75);
+                    }
+                    .card-header{
+                        height: 80%;
+                        img{
+                            width: 100%;
+                     
+                        }
+                    }
+                    .card-body{
+                       
+                        .name-item{
+                            @include text($fs-2xl,$fw-bold,$text-dark);
+                        }
+                        .desc-item{
+                            @include text($fs-base,$fw-normal,$c1-text-dark);
+                        }
+                        button{
+                            border: none;
+                            @include text($fs-base,$fw-normal,$text-dangerous);  
+                        }
+                        .price{
+                            @include text($fs-2xl,$fw-bold,$text-dark);
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+// ---------------------footer------------------------
+.footer{
+    .container{
+        .row{
+            .col-3{
+
+            }
+        }
+    }
+}
