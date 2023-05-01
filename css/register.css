@@ -24,6 +24,9 @@
   text-decoration: none;
   color: #fff;
 }
+.header .container .sign-in a:hover {
+  color: #6181F3;
+}
 
 .form-register .container {
   width: 50%;
@@ -56,15 +59,25 @@
   margin: 0 auto;
   display: block;
   color: #fff;
-  background-color: #242424;
+  background: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #D017EE 89.71%);
 }
 
 .footer {
-  padding-top: 30px;
+  padding-top: 70px;
 }
-.footer .container .row {
+.footer .container .row .col-4 h1 {
+  font-size: 30px;
+  font-weight: 500;
   color: #fff;
 }
-.footer .container .row h2 {
-  color: red;
+.footer .container .row .col-4 p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+}
+.footer .container .row .col-4 a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 300;
+  color: #fa3e3e;
 }

@@ -39,13 +39,13 @@ function checkUsername(value,id,placeholder){
 }
 //    ---------------validation-PassWord-------------------
 function checkPassWord(value,id,placeholder){
-    var regexPassWord =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+    var regexPassWord =/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
     if(regexPassWord.test(value)) {
         document.querySelector(`#${id}`).innerHTML = ''
         return true;
      }else {
         document.querySelector(`#${id}`).className = "block text-danger";
-        document.querySelector(`#${id}`).innerHTML = `${placeholder} không hợp lệ`
+        document.querySelector(`#${id}`).innerHTML = `${placeholder}  ít nhất 8 ký tự, phải gồm ít nhất 1 chữ và số.`
         return false;
      }
 }

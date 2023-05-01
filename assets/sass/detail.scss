@@ -6,7 +6,6 @@ $text-hope:#1877f2;
 $text-dangerous:#fa3e3e;
 $text-special:#6181F3;
 
-
 // ----------font-size----------------
 $fs-base:16px;
 $fs-xl:18px;
@@ -36,12 +35,6 @@ $bg-dangerous:#fa3e3e;
     font-weight: $fw;
     color: $c;
 }
-// animation
-@keyframes mymove {
-    50% {transform: rotate(10deg);}
-  }
-
-
 
 // ----------------Css utility------------------
 
@@ -73,7 +66,7 @@ $bg-dangerous:#fa3e3e;
 
 // ------------------header-----------------------
 .header {
-    background-color: #242424;
+    background-color: $bg-dark;
     padding: 15px 0;
     .container{
         display: flex;
@@ -87,11 +80,10 @@ $bg-dangerous:#fa3e3e;
             a{
                padding: 0 5px;
                text-decoration: none;
-               color: $bg-light;
+               color:$text-light;
                &:hover{
-                color:$text-special;
+                color: $text-special;
                }
-               
             }
         }
     }
@@ -101,22 +93,20 @@ $bg-dangerous:#fa3e3e;
 
 .option{
     .container{
-        @include text($fs-2xl,$fw-normal,$bg-dark );
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-size: 20px;
         .logo2{
             img{
-                width: $fs-5xl;
+                width: 50px;
             }
         }
         .menu{
-           
             a{
-                
                 text-decoration: none;
-                color:$bg-dark;
-                padding: 0 25px;
+                color:$text-dark;
+                padding: 0 20px;
                 position: relative;
                 &::after{
                     position: absolute;
@@ -126,7 +116,7 @@ $bg-dangerous:#fa3e3e;
                     width: 100%;
                     transform:scaleX(0);
                     height: 3px;
-                    background-color:$bg-dark;
+                    background-color:$text-dark;
                     transition: all 0.3s;
                 }
                 &:hover{
@@ -141,6 +131,7 @@ $bg-dangerous:#fa3e3e;
                 flex-direction: column;
                 width: 100%;
             }
+           
         }
         .search{
             a{
@@ -150,8 +141,7 @@ $bg-dangerous:#fa3e3e;
                 }
             }
             input{
-                border: 1px solid;
-                border-radius: 5px;
+                
             }
         }
         
@@ -160,23 +150,81 @@ $bg-dangerous:#fa3e3e;
 
 // -----------------carousel----------------------------------
  .carousel{
-    background-color: #242424;
-    .slide{
-        .carousel-indicators{
+    background-color: $bg-dark;
+    .container{
+        padding: 100px;
+        .row{
+            .left{
+                .card{
+                    width: 70%;
+                    margin: 0 auto;
+                    .card-header{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .card-body{
 
-        }
-        .carousel-inner{
-            .active{
+                    }
+                }
                 
             }
-            .carousel-item{
-                img{
-                    margin: 0 auto;
+            .right{
+                #product-name-detail{
+                    @include text($fs-4xl,$fw-bold,$text-light )
+                }
+                #product-desc-detail{
+                    @include text($fs-base,$fw-line,$text-light )
+
+                }
+                .available-size{
+                    @include text($fs-2xl,$fw-bold,$text-light )
+
+                }
+                .size{
+                   display: flex;
+                   flex-wrap: wrap;
+                    .size-detail{
+                        margin-left: 10px;
+                        text-decoration: none;
+                        padding: 10px;
+                        background: linear-gradient(180deg, #6181F3 0%, #7C97F5 99.48%);
+                        color: $text-dark;
+                        &:hover{
+                            font-weight: 700;
+                            
+                        }
+                        @media only screen and (max-width:920px) {
+                            text-align: center;
+                            margin-bottom: 10px;
+                            
+                            width: calc(100%/5)
+                        }
                     }
-                .carousel-caption{
-                    h5{
-                        @include text($fs-3xl,$fw-semiBold,$text-light )
+
+                }
+                #price-detail{
+                    margin: 25px 0;
+                    @include text($fs-2xl,$fw-semiBold,$text-dangerous )
+
+                }
+                .quantity{
+                    margin-bottom: 30px;
+                    #btnIncrease{
+                        padding: 10px;
+                        background: linear-gradient(180deg, #6181F3 0%, #7C97F5 99.48%);
                     }
+                    #quantity-numer{
+                        
+                    }
+                    #btnDecrease{
+                        background: linear-gradient(180deg, #6181F3 0%, #7C97F5 99.48%);
+                        padding: 10px;
+                    }
+                }
+                #btnCart{
+                    padding: 20px;
+                    background: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #D017EE 89.71%);
                 }
             }
         }
@@ -223,9 +271,6 @@ $bg-dangerous:#fa3e3e;
                             @include text($fs-2xl,$fw-bold,$text-dark);
                         }
                         
-                    }
-                    &:hover{
-                        animation: mymove 5s infinite;
                     }
                 }              
             }

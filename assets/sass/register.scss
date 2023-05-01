@@ -1,3 +1,57 @@
+// --------color-----------------
+$text-light:#fff;
+$text-dark:#242424;
+$c1-text-dark:#afa7a7;
+$text-hope:#1877f2;
+$text-dangerous:#fa3e3e;
+$text-special:#6181F3;
+
+
+// ----------font-size----------------
+$fs-small:12px;
+$fs-semibase:14px;
+$fs-base:16px;
+$fs-xl:18px;
+$fs-2xl:20px;
+$fs-3xl:30px;
+$fs-4xl:40px;
+$fs-5xl:50px;
+$fs-6xl:60px;
+$fs-7xl:70px;
+$fs-8xl:80px;
+$fs-9xl:90px;
+// ------------------font-weight-------------
+$fw-line:300;
+$fw-normal:400;
+$fw-semiBold:500;
+$fw-bold:700;
+
+// -----------------background--------------
+$bg-light:#fff;
+$bg-dark:#242424;
+$bg-hope:#1877f2;
+$bg-dangerous:#fa3e3e;
+
+// ------------------mixin---------------------------
+@mixin text($fs,$fw,$c){
+    font-size: $fs ;
+    font-weight: $fw;
+    color: $c;
+}
+
+// ----------------Css utility------------------
+
+// ------------------function--------------------
+
+
+
+// -----------------loop-----------------------
+
+
+
+
+
+
 
 // ----------------------global-------------
 *{
@@ -5,7 +59,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    background-color: #242424;
+    background-color:$bg-dark;
 }
 
 .container{
@@ -17,7 +71,7 @@
 
 // ------------------header-----------------------
 .header {
-    background-color: #242424;
+    background-color: $bg-dark;
     padding: 15px 0;
     .container{
         display: flex;
@@ -31,7 +85,10 @@
             a{
                padding: 0 5px;
                text-decoration: none;
-               color:#fff;
+               color:$text-light;
+               &:hover{
+                color: $text-special;
+               }
             }
         }
     }   
@@ -45,26 +102,26 @@
             .card-header{
                 h1{
                     text-align: center;
-                      background-color: #fff;  
+                      background-color: $bg-light;  
                 }
             }
             .card-body{
-                background-color: #fff;
+                background-color: $bg-light;
                 display: flex;
                 flex-direction: column;
                 input{
                     padding: 10px;
                     margin: 10px;
-                    background-color: #fff;
+                    background-color: $bg-light;
                     border-radius: 5px;
                 }
                 .gender{
-                    background-color: #fff;
+                    background-color: $bg-light;
                         input{
 
                         }
                         label{
-                            background-color: #fff;                           
+                            background-color: $bg-light;                           
                         }
                 }
             }
@@ -75,8 +132,8 @@
                         width: 40%;
                         margin: 0 auto;
                         display: block;
-                        color: #fff;
-                        background-color:#242424;
+                        color:$text-light;
+                        background: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #D017EE 89.71%);
                     }
             }
         }
@@ -86,19 +143,24 @@
 // ------------------footer-------------------------
 
 .footer{
-    padding-top: 30px;
+    padding-top: 70px;
     .container{
         .row{
-            color:#fff ;
-            h1{
+            .col-4{
+                
+                h1{
+                    @include text($fs-3xl,$fw-semiBold ,$text-light )
+                }
+                p{
+                    @include text($fs-semibase,$fw-line ,$text-light )
 
+                }
+                a{
+                    text-decoration: none;
+                    @include text($fs-small,$fw-line ,$text-dangerous )
+                }
             }
-            p{
-
-            }
-            h2{
-                color: red;
-            }
+            
         }
     }
 }

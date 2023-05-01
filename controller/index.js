@@ -13,7 +13,7 @@ function getData() {
         for (let index = 0; index < arrItem.length; index++) {
             let item = arrItem[index];
             html += `
-         <div class="col-3">
+         <div class=" col-3">
          <div class="card item-${index}">
          <div class="card-header">
            <img src="${item.image}" alt="">
@@ -21,7 +21,7 @@ function getData() {
          <div class="card-body">
            <h1 class="name-item">${item.name}</h1>
            <p class="desc-item">${item.description}</p>
-            <button id='btnBuy'>Buy Now</button>
+            <a id='buyNow' href='/view/detail.html?productid=${index+1}'>Buy Now</a>
            <p class="price">${item.price}$</p>
          </div>
          </div>
